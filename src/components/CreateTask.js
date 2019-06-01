@@ -29,7 +29,11 @@ class CreateTask extends Component {
             placeholder="A name for the task"
           />
         </div>
-        <Mutation mutation={POST_MUTATION} variables={{ name }}>
+        <Mutation 
+          mutation={POST_MUTATION} 
+          variables={{ name }}
+          onCompleted={() => this.props.history.push('/')}
+        >
           {postMutation => <button onClick={postMutation}>Submit</button>}
         </Mutation>
       </div>
