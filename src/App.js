@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import TaskList from './components/TaskList'
+import CreateTask from './components/CreateTask'
 
 class App extends Component {
   render() {
-    return <TaskList />
+    return <CreateTask />
   }
 }
 
