@@ -5,8 +5,11 @@ import gql from 'graphql-tag'
 
 const SIGNUP_MUTATION = gql`
   mutation SignupMutation($username: String!, $password: String!) {
-    signup(username: $username, password: $password) {
-      token
+    createUser(username: $username, password: $password) {
+      user {
+        id
+        username
+      }
     }
   }
 `
@@ -52,9 +55,9 @@ class Login extends Component {
             onCompleted={data => this._confirm(data)}
           >
             {mutation => (
-              <div onClick={mutation}>
+              <button onClick={mutation}>
                 {login ? 'login' : 'create account'}
-              </div>
+              </button>
             )}
           </Mutation>
           <div
