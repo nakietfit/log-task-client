@@ -4,9 +4,8 @@ import gql from 'graphql-tag'
 
 const POST_MUTATION = gql`
   mutation PostMutation($name: String!) {
-    post(name: $name) {
+    createTask(name: $name) {
       id
-      createdAt
       name
     }
   }
