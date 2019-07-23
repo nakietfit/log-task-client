@@ -34,13 +34,14 @@ class Login extends Component {
     return (
       <div>
         <h4>{login ? 'Login' : 'Sign Up'}</h4>
-        <div>
+        <div className="mt-4">
           <input
             value={username}
             onChange={e => this.setState({ username: e.target.value })}
             type="text"
             placeholder="Your username address"
           />
+          <div className="mt-4" />
           <input
             value={password}
             onChange={e => this.setState({ password: e.target.value })}
@@ -55,13 +56,14 @@ class Login extends Component {
             onCompleted={data => this._confirm(data)}
           >
             {mutation => (
-              <button onClick={mutation}>
+              <button onClick={mutation} className="mt-4">
                 {login ? 'login' : 'create account'}
               </button>
             )}
           </Mutation>
           <div
             onClick={() => this.setState({ login: !login })}
+            className="mt-4"
           >
             {login
               ? 'need to create an account?'

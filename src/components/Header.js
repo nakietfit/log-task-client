@@ -8,15 +8,15 @@ class Header extends Component {
     const authToken = localStorage.getItem(AUTH_TOKEN)
 
     return (
-      <div>
-        <div>
-          <div>Log Task</div>
+      <nav className="navbar">
+        <div className="d-flex">
+          <div className="mr-5">Log Task</div>
           <Link to="/">
             new
           </Link>
           {authToken && (
-            <div>
-              <div>|</div>
+            <div className="d-flex">
+              <div className="mx-5">|</div>
               <Link to="/create">
                 submit
               </Link>
@@ -39,7 +39,7 @@ class Header extends Component {
             </Link>
           )}
         </div>
-      </div>
+      </nav>
     )
   }
 }
