@@ -5,12 +5,9 @@ import gql from 'graphql-tag'
 
 const FEED_QUERY = gql`
   {
-    feed {
-      tasks {
-        id
-        createdAt
-        name
-      }
+    tasks {
+      id
+      name
     }
   }
 `
@@ -23,7 +20,7 @@ class TaskList extends Component {
           if (loading) return <div>Fetching</div>
           if (error) return <div>Error</div>
     
-          const tasksToRender = data.feed.tasks
+          const tasksToRender = data.tasks || []
     
           return (
             <div>
